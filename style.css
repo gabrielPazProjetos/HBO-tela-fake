@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Quicksand:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #020228;
+  --secondary-color: #ff00e5;
+  --tertiary-color: #b535f6;
+  --btn-bg-color-gradient: linear-gradient(45deg, #9b34ef 0%, #490cb0 20%, transparent 50%);
+  --divider-bg-color: linear-gradient(90deg, #5516ba, rgba(255, 0, 229, 0.5) 80%);
+  --nav-bg-color: rgba(0, 0, 0, 0.3);
+  --text-color: #fff;
+  --link-color: #9e86ff;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.header {
+  background: var(--nav-bg-color);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-actions .btn {
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  background: var(--btn-bg-color-gradient);
+  color: var(--text-color);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 229, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-actions .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 229, 0.5);
+}
+
+.hero {
+  position: relative;
+  height: 90vh;
+  background: linear-gradient(to bottom, rgba(2, 2, 40, 0.8), rgba(2, 2, 40, 1)),
+              url('assets/images/banner.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: var(--divider-bg-color);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--text-color);
+  animation: gradientMove 5s infinite linear;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.btn.highlight {
+  background: var(--btn-bg-color-gradient);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(255, 0, 229, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.highlight:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 229, 0.5);
+}
+
+.plans {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.plan-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.catalog {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+button,
+.btn,
+h1, h2, h3, h4, h5, h6,
+p, a, li, span, label,
+input, textarea {
+  color: var(--text-color);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+}
